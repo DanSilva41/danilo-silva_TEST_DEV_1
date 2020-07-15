@@ -1,7 +1,12 @@
 package backend
 
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+
 import java.time.LocalDate
 
+@ToString(includeNames = true)
+@EqualsAndHashCode
 class Stock {
 
     BigDecimal price

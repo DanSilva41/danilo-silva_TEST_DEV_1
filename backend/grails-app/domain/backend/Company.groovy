@@ -1,8 +1,10 @@
 package backend
 
 import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 
-@EqualsAndHashCode
+@ToString(includeNames = true)
+@EqualsAndHashCode(excludes = ['segment'])
 class Company {
 
     String name
