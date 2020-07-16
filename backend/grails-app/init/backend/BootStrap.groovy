@@ -36,8 +36,6 @@ class BootStrap {
         listOfCompanies.add(new Company(name: 'NITRYX', segment: 'AI'))
         listOfCompanies.add(new Company(name: 'AMAZON', segment: 'cloud computing'))
 
-        log.println(listOfCompanies.get(0).toString())
-
         for (Company c : listOfCompanies)
             companyService.save(c)
         listOfCompanies

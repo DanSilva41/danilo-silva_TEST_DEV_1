@@ -1,11 +1,9 @@
 package backend
 
 import groovy.transform.EqualsAndHashCode
-import groovy.transform.ToString
 
 import java.time.LocalDateTime
 
-@ToString
 @EqualsAndHashCode
 class Stock {
 
@@ -17,5 +15,14 @@ class Stock {
     static constraints = {
         price nullable: false
         priceDate nullable: false
+    }
+
+    @Override
+    String toString() {
+        return "Stock {" +
+                "company = " + company +
+                ", price=" + price +
+                ", priceDate=" + priceDate +
+                '}'
     }
 }

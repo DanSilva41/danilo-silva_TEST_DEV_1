@@ -15,4 +15,13 @@ class Company {
         name blank: false, unique: true, size: 2..60
         segment blank: false, size: 2..60
     }
+
+
+    @Override
+    String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", segment='" + segment + '\'' +
+                '}';
+    }
 }
