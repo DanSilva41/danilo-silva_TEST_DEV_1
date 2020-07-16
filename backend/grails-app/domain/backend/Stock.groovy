@@ -3,22 +3,19 @@ package backend
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
-import java.time.LocalDate
+import java.time.LocalDateTime
 
-@ToString(includeNames = true)
+@ToString
 @EqualsAndHashCode
 class Stock {
 
     BigDecimal price
-    LocalDate priceDate
+    LocalDateTime priceDate
+
+    static belongsTo = [company: Company]
 
     static constraints = {
         price nullable: false
         priceDate nullable: false
-    }
-
-    String toString() {
-        price
-        priceDate
     }
 }
