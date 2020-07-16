@@ -50,7 +50,7 @@ class BootStrap {
         final LocalDateTime actualDateHour = LocalDateTime.now()
 
         // 30 days ago
-        LocalDateTime startHourDay = this.getDayAndHourAgo(actualDateHour, 1)
+        LocalDateTime startHourDay = this.getDayAndHourAgo(actualDateHour, 30)
 
         LocalDateTime endBusinessHoursOfDay
         while (startHourDay <= actualDateHour) {
