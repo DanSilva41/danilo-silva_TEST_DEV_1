@@ -1,0 +1,22 @@
+.custom-btn {
+  color: #000000 !important;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border: 4px solid #0099cc !important;
+  border-radius: 6px;
+  display: inline-block;
+  outline:none;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    color: #494949 !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.custom-table {
+  margin-top: 1em;
+}
