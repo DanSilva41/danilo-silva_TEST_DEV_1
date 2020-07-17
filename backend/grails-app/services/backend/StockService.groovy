@@ -42,7 +42,7 @@ class StockService {
         log.printf("TOTAL QUOTES RECOVERED: %d\n", stocksFounds.size())
     }
 
-    BigDecimal getStandardDeviation(Company company) {
+    BigDecimal getStandardDeviationOfCompany(Company company) {
 
         List<Stock> stocksOfCompany = Stock.findAllByCompany(company)
         List<BigDecimal> pricesOfStocks = stocksOfCompany.stream().map({ s -> s.price }).collect(Collectors.toList());

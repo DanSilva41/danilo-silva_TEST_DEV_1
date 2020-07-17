@@ -1,9 +1,7 @@
 package backend
 
 import groovy.transform.EqualsAndHashCode
-import groovy.transform.ToString
 
-@ToString()
 @EqualsAndHashCode(excludes = ['segment'])
 class Company {
 
@@ -22,6 +20,6 @@ class Company {
         return "Company{" +
                 "name='" + name + '\'' +
                 ", segment='" + segment + '\'' +
-                '}';
+                '}'
     }
 }

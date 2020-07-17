@@ -1,6 +1,5 @@
 package backend
 
-
 import grails.gorm.transactions.Transactional
 
 import java.util.stream.Collectors
@@ -23,7 +22,7 @@ class CompanyService {
                     id       : c.getId(),
                     name     : c.getName(),
                     segment  : c.getSegment(),
-                    deviation: stockService.getStandardDeviation(c)
+                    deviation: stockService.getStandardDeviationOfCompany(c)
             ]
         }).collect(Collectors.toList())
     }
