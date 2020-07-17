@@ -7,6 +7,7 @@ import java.time.LocalDateTime
 @EqualsAndHashCode
 class Stock {
 
+    Long id
     BigDecimal price
     LocalDateTime priceDate
 

@@ -14,13 +14,13 @@ class BootStrap {
     BusinessService businessService
 
     def init = { servletContext ->
-        log.println(LocalDateTime.now().toString() + " INFO --- " + BootStrap.getPackageName() + "\t: initializing and grafting data")
+        log.println(LocalDateTime.now().toString() + " INFO --- " + BootStrap.getName() + "\t: initializing and grafting data")
 
         List<Company> companies = insertMockCompanies()
         for (Company c : companies)
             this.generateStockForCompany(c)
 
-        log.println(LocalDateTime.now().toString() + " INFO --- " + BootStrap.getPackageName() + "\t: data initializing finished")
+        log.println(LocalDateTime.now().toString() + " INFO --- " + BootStrap.getName() + "\t: data initializing finished")
     }
 
     def destroy = {
@@ -50,7 +50,7 @@ class BootStrap {
         final LocalDateTime actualDateHour = LocalDateTime.now()
 
         // 30 days ago
-        LocalDateTime startHourDay = this.getDayAndHourAgo(actualDateHour, 30)
+        LocalDateTime startHourDay = this.getDayAndHourAgo(actualDateHour, 1)
 
         LocalDateTime endBusinessHoursOfDay
         while (startHourDay <= actualDateHour) {
