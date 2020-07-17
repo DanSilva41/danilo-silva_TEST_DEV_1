@@ -1,11 +1,12 @@
 <h3 class="text-center">Task 3</h3>
 <button type="button" id="btn-get-companies" name="btn-get-companies" data-cy="btn-get-companies"
-        class="custom-btn" (click)="getCompaniesInService()">GET COMPANIES
+        class="custom-btn" (click)= "getCompaniesInService()">GET COMPANIES
 </button>
 
 
 <div class="mat-elevation-z8 custom-table" *ngIf="dataSource">
-  <table mat-table [dataSource]="dataSource" class="w-100">
+  <table id="table-of-companies" data-cy="table-of-companies" class="w-100"
+         mat-table [dataSource]="dataSource">
 
     <!-- Position Column -->
     <ng-container matColumnDef="name">
