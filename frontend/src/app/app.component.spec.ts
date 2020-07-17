@@ -1,15 +1,26 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {TestBed, async} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppComponent} from './app.component';
+import {ListCompaniesComponent} from './list-companies/list-companies.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {MatTableModule} from '@angular/material/table';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserModule,
+        HttpClientTestingModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatTableModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, ListCompaniesComponent
       ],
     }).compileComponents();
   }));

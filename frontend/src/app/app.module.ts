@@ -6,8 +6,7 @@ import {AppComponent} from './app.component';
 import {ListCompaniesComponent} from './list-companies/list-companies.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from "@angular/material/paginator";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatTableModule,
-    MatPaginatorModule
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
