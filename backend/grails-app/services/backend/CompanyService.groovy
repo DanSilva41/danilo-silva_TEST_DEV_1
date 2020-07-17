@@ -1,10 +1,31 @@
 package backend
 
-import grails.gorm.services.Service
 
-@Service(Company)
-interface CompanyService {
+import grails.gorm.transactions.Transactional
 
-    Company save(Company company)
+import java.util.stream.Collectors
+
+@Transactional
+class CompanyService {
+
+    StockService stockService
+
+    Company save(Company company) {
+        company.save()
+        company
+    }
+
+    def listCompanies() {
+        List<Company> companies = Company.list()
+
+        companies.parallelStream().map({ c ->
+            [
+                    id       : c.getId(),
+                    name     : c.getName(),
+                    segment  : c.getSegment(),
+                    deviation: stockService.getStandardDeviation(c)
+            ]
+        }).collect(Collectors.toList())
+    }
 
 }
